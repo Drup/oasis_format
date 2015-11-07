@@ -1,0 +1,33 @@
+OASISFormat: 0.4
+Name:        Oasis_format
+Version:     0.1.0
+Synopsis:    Oasis_format
+Authors:     Gabriel Radanne
+License:     ISC
+Plugins:     META (0.4), DevFiles (0.4)
+BuildTools:  ocamlbuild
+
+AlphaFeatures: ocamlbuild_more_args
+
+Library oasis_format
+  Path: src
+  Modules: Oasis_format, Oasis_parser, Oasis_ast
+  BuildDepends: sedlex, menhirLib
+
+Document "oasis_format"
+  Type: ocamlbuild (0.3)
+  BuildTools: ocamldoc
+  Title: API reference for Oasis_format
+  XOCamlbuildPath: .
+  XOCamlbuildExtraArgs:
+    "-docflags '-t Oasis_format -colorize-code -short-functors -charset utf-8'"
+  XOCamlbuildLibraries: oasis_format
+
+SourceRepository head
+  Type: git
+  Location: https://github.com/Drup/oasis_format.git
+  Browser: https://github.com/Drup/oasis_format
+
+#Local Variables:
+#compile-command: "oasis setup"
+#End:

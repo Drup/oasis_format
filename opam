@@ -1,0 +1,24 @@
+opam-version: "1.2"
+name:         "oasis_format"
+maintainer:   "Gabriel Radanne <drupyog@zoho.com>"
+authors:      [ "Gabriel Radanne" ]
+homepage:     "https://github.com/Drup/oasis_format"
+bug-reports:  "https://github.com/Drup/oasis_format/issues"
+dev-repo:     "https://github.com/Drup/oasis_format.git"
+license:      "ISC"
+version: "dev"
+tags: [ ]
+build: [
+  ["ocaml" "setup.ml" "-configure"
+    "--enable-tests" {test}
+    "--prefix" prefix
+  ]
+  ["ocaml" "setup.ml" "-build"]
+]
+build-doc: ["ocaml" "setup.ml" "-doc"]
+install: ["ocaml" "setup.ml" "-install"]
+remove: ["ocamlfind" "remove" "oasis_format"]
+depends: [
+  "ocamlfind" {build}
+  "oasis" {build}
+]

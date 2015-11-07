@@ -1,0 +1,13 @@
+# OASIS_START
+# DO NOT EDIT (digest: d41d8cd98f00b204e9800998ecf8427e)
+# OASIS_STOP
+
+true: warn(+A-4-6-9-40-42-44)
+true: warn_error(+1..49)
+true: strict_sequence, safe_string, short_paths
+true: bin_annot
+
+# Better locations and loc in .mlis
+# true: keep_locs
+
+true : use_menhir, explain, table

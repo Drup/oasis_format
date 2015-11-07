@@ -1,0 +1,392 @@
+main: BEGIN BEGIN END EOF 
+##
+## Ends in an error in state: 43.
+##
+## top_stmt -> BEGIN list(top_stmt) . END [ IF IDENT EOF END BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## BEGIN list(top_stmt) 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 40, spurious reduction of production list(top_stmt) -> 
+## In state 42, spurious reduction of production list(top_stmt) -> top_stmt list(top_stmt) 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: BEGIN END END 
+##
+## Ends in an error in state: 46.
+##
+## main -> list(top_stmt) . EOF [ # ]
+##
+## The known suffix of the stack is as follows:
+## list(top_stmt) 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 40, spurious reduction of production list(top_stmt) -> 
+## In state 42, spurious reduction of production list(top_stmt) -> top_stmt list(top_stmt) 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: BEGIN END THEN 
+##
+## Ends in an error in state: 40.
+##
+## list(top_stmt) -> top_stmt . list(top_stmt) [ EOF END ]
+##
+## The known suffix of the stack is as follows:
+## top_stmt 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: BEGIN THEN 
+##
+## Ends in an error in state: 39.
+##
+## top_stmt -> BEGIN . list(top_stmt) END [ IF IDENT EOF END BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## BEGIN 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT COLON THEN 
+##
+## Ends in an error in state: 22.
+##
+## field_op -> COLON . STRING [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## COLON 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT DOLLARCOLON IDENT THEN 
+##
+## Ends in an error in state: 21.
+##
+## expr -> expr . AND expr [ OR IF IDENT EOF END ELSE BEGIN AND ]
+## expr -> expr . OR expr [ OR IF IDENT EOF END ELSE BEGIN AND ]
+## field_op -> DOLLARCOLON expr . [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## DOLLARCOLON expr 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 4, spurious reduction of production expr -> IDENT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT DOLLARCOLON THEN 
+##
+## Ends in an error in state: 20.
+##
+## field_op -> DOLLARCOLON . expr [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## DOLLARCOLON 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT PLUSCOLON THEN 
+##
+## Ends in an error in state: 18.
+##
+## field_op -> PLUSCOLON . STRING [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## PLUSCOLON 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT STRING BEGIN BEGIN END THEN 
+##
+## Ends in an error in state: 26.
+##
+## list(stmt) -> stmt . list(stmt) [ END ]
+##
+## The known suffix of the stack is as follows:
+## stmt 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT STRING BEGIN THEN 
+##
+## Ends in an error in state: 25.
+##
+## stmt -> BEGIN . list(stmt) END [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## BEGIN 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT STRING IDENT THEN 
+##
+## Ends in an error in state: 17.
+##
+## simple_stmt -> IDENT . field_op [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IDENT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT STRING THEN 
+##
+## Ends in an error in state: 37.
+##
+## top_stmt -> IDENT id_or_string . stmt [ IF IDENT EOF END BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IDENT id_or_string 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IDENT THEN 
+##
+## Ends in an error in state: 34.
+##
+## simple_stmt -> IDENT . field_op [ IF IDENT EOF END BEGIN ]
+## top_stmt -> IDENT . id_or_string stmt [ IF IDENT EOF END BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IDENT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT AND LPAREN IDENT RPAREN STRING 
+##
+## Ends in an error in state: 13.
+##
+## expr -> expr . AND expr [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+## expr -> expr AND expr . [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+## expr -> expr . OR expr [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## expr AND expr 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT AND THEN 
+##
+## Ends in an error in state: 12.
+##
+## expr -> expr AND . expr [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## expr AND 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT LPAREN IDENT THEN 
+##
+## Ends in an error in state: 6.
+##
+## expr -> IDENT LPAREN IDENT . RPAREN [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## IDENT LPAREN IDENT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT LPAREN THEN 
+##
+## Ends in an error in state: 5.
+##
+## expr -> IDENT LPAREN . IDENT RPAREN [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## IDENT LPAREN 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT OR LPAREN IDENT RPAREN STRING 
+##
+## Ends in an error in state: 11.
+##
+## expr -> expr . AND expr [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+## expr -> expr . OR expr [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+## expr -> expr OR expr . [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## expr OR expr 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT OR THEN 
+##
+## Ends in an error in state: 10.
+##
+## expr -> expr OR . expr [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## expr OR 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT RPAREN 
+##
+## Ends in an error in state: 15.
+##
+## expr -> expr . AND expr [ THEN OR AND ]
+## expr -> expr . OR expr [ THEN OR AND ]
+## simple_stmt -> IF expr . THEN stmt ELSE stmt [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IF expr 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 4, spurious reduction of production expr -> IDENT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT STRING 
+##
+## Ends in an error in state: 4.
+##
+## expr -> IDENT . [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+## expr -> IDENT . LPAREN IDENT RPAREN [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## IDENT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT THEN BEGIN END ELSE THEN 
+##
+## Ends in an error in state: 32.
+##
+## simple_stmt -> IF expr THEN stmt ELSE . stmt [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IF expr THEN stmt ELSE 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT THEN BEGIN END THEN 
+##
+## Ends in an error in state: 31.
+##
+## simple_stmt -> IF expr THEN stmt . ELSE stmt [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IF expr THEN stmt 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF IDENT THEN THEN 
+##
+## Ends in an error in state: 16.
+##
+## simple_stmt -> IF expr THEN . stmt ELSE stmt [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IF expr THEN 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF LPAREN IDENT THEN 
+##
+## Ends in an error in state: 8.
+##
+## expr -> expr . AND expr [ RPAREN OR AND ]
+## expr -> expr . OR expr [ RPAREN OR AND ]
+## expr -> LPAREN expr . RPAREN [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## LPAREN expr 
+##
+## WARNING: This example involves spurious reductions.
+## This implies that, although the LR(1) items shown above provide an
+## accurate view of the past (what has been recognized so far), they
+## may provide an INCOMPLETE view of the future (what was expected next).
+## In state 4, spurious reduction of production expr -> IDENT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF LPAREN THEN 
+##
+## Ends in an error in state: 3.
+##
+## expr -> LPAREN . expr RPAREN [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## LPAREN 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF NOT THEN 
+##
+## Ends in an error in state: 2.
+##
+## expr -> NOT . expr [ THEN RPAREN OR IF IDENT EOF END ELSE BEGIN AND ]
+##
+## The known suffix of the stack is as follows:
+## NOT 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: IF THEN 
+##
+## Ends in an error in state: 1.
+##
+## simple_stmt -> IF . expr THEN stmt ELSE stmt [ IF IDENT EOF END ELSE BEGIN ]
+##
+## The known suffix of the stack is as follows:
+## IF 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
+main: THEN 
+##
+## Ends in an error in state: 0.
+##
+## main' -> . main [ # ]
+##
+## The known suffix of the stack is as follows:
+## 
+##
+
+<YOUR SYNTAX ERROR MESSAGE HERE>
+
